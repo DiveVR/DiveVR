@@ -10,4 +10,10 @@ export function login(email, password) {
       .catch(function(error) {
         console.log(error.code)
       });
-  }
+}
+
+export function signUp(email, password) {
+  return fire 
+    .auth()
+    .createUserWithEmailAndPassword(email, password);
+}
