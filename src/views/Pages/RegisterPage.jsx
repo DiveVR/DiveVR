@@ -1,13 +1,8 @@
 /*!
 
 =========================================================
-* Material Dashboard PRO React - v1.7.0
+
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
 
 =========================================================
 
@@ -74,25 +69,25 @@ class RegisterPage extends React.Component {
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={10}>
             <Card className={classes.cardSignup}>
-              <h2 className={classes.cardTitle}>Register</h2>
+              <h2 className={classes.cardTitle}>DiveVR Registration</h2>
               <CardBody>
                 <GridContainer justify="center">
                   <GridItem xs={12} sm={12} md={5}>
                     <InfoArea
-                      title="Marketing"
-                      description="We've created the marketing campaign of the website. It was a very interesting collaboration."
+                      title="Dive VR registration"
+                      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, seagna aliqua. Ut enim ad minim v"
                       icon={Timeline}
                       iconColor="rose"
                     />
                     <InfoArea
-                      title="Fully Coded in HTML5"
-                      description="We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub."
+                      title="Dive in"
+                      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, slore trud exercitatuip ex ea c"
                       icon={Code}
                       iconColor="primary"
                     />
                     <InfoArea
-                      title="Built Audience"
-                      description="There is also a Fully Customizable CMS Admin Dashboard for this product."
+                      title="Policy"
+                      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi"
                       icon={Group}
                       iconColor="info"
                     />
@@ -129,6 +124,23 @@ class RegisterPage extends React.Component {
                             </InputAdornment>
                           ),
                           placeholder: "First Name..."
+                        }}
+                      />
+                      <CustomInput
+                        formControlProps={{
+                          fullWidth: true,
+                          className: classes.customFormControlClasses
+                        }}
+                        inputProps={{
+                          startAdornment: (
+                            <InputAdornment
+                              position="start"
+                              className={classes.inputAdornment}
+                            >
+                              <Face className={classes.inputAdornmentIcon} />
+                            </InputAdornment>
+                          ),
+                          placeholder: "Last Name..."
                         }}
                       />
                       <CustomInput

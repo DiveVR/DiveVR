@@ -1,13 +1,12 @@
 /*!
 
 =========================================================
-* Material Dashboard PRO React - v1.7.0
+* 
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
+* 
+*
+* 
 
 =========================================================
 
@@ -101,83 +100,7 @@ class Dashboard extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <GridContainer>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
-            <Card>
-              <CardHeader color="warning" stats icon>
-                <CardIcon color="warning">
-                  <Icon>content_copy</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
-                <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
-                </h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.stats}>
-                  <Danger>
-                    <Warning />
-                  </Danger>
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
-                  </a>
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
-            <Card>
-              <CardHeader color="success" stats icon>
-                <CardIcon color="success">
-                  <Store />
-                </CardIcon>
-                <p className={classes.cardCategory}>Revenue</p>
-                <h3 className={classes.cardTitle}>$34,245</h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.stats}>
-                  <DateRange />
-                  Last 24 Hours
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
-            <Card>
-              <CardHeader color="danger" stats icon>
-                <CardIcon color="danger">
-                  <Icon>info_outline</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Fixed Issues</p>
-                <h3 className={classes.cardTitle}>75</h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.stats}>
-                  <LocalOffer />
-                  Tracked from Github
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
-            <Card>
-              <CardHeader color="info" stats icon>
-                <CardIcon color="info">
-                  <i className="fab fa-twitter" />
-                </CardIcon>
-                <p className={classes.cardCategory}>Followers</p>
-                <h3 className={classes.cardTitle}>+245</h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.stats}>
-                  <Update />
-                  Just Updated
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
-        </GridContainer>
-        <GridContainer>
+        {/* <GridContainer>
           <GridItem xs={12}>
             <Card>
               <CardHeader color="success" icon>
@@ -266,11 +189,13 @@ class Dashboard extends React.Component {
               </CardBody>
             </Card>
           </GridItem>
-        </GridContainer>
+        </GridContainer> */}
+        <h3>Recent VR Views</h3>
+        <br />
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart className={classes.cardHover}>
-              <CardHeader color="info" className={classes.cardHeaderHover}>
+              {/* <CardHeader color="info" className={classes.cardHeaderHover}>
                 <ChartistGraph
                   className="ct-chart-white-colors"
                   data={dailySalesChart.data}
@@ -278,6 +203,11 @@ class Dashboard extends React.Component {
                   options={dailySalesChart.options}
                   listener={dailySalesChart.animation}
                 />
+              </CardHeader> */}
+              <CardHeader image className={classes.cardHeaderHover}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <img src={priceImage2} alt="..." />
+                </a>
               </CardHeader>
               <CardBody>
                 <div className={classes.cardHoverUnder}>
@@ -302,12 +232,13 @@ class Dashboard extends React.Component {
                     </Button>
                   </Tooltip>
                 </div>
-                <h4 className={classes.cardTitle}>Daily Sales</h4>
+                <h4 className={classes.cardTitle}>VR Video Title</h4>
                 <p className={classes.cardCategory}>
-                  <span className={classes.successText}>
+                  {/* <span className={classes.successText}>
                     <ArrowUpward className={classes.upArrowCardCategory} /> 55%
                   </span>{" "}
-                  increase in today sales.
+                  increase in today sales. */}
+                  VR Video Description
                 </p>
               </CardBody>
               <CardFooter chart>
@@ -319,7 +250,7 @@ class Dashboard extends React.Component {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart className={classes.cardHover}>
-              <CardHeader color="warning" className={classes.cardHeaderHover}>
+              {/* <CardHeader color="warning" className={classes.cardHeaderHover}>
                 <ChartistGraph
                   className="ct-chart-white-colors"
                   data={emailsSubscriptionChart.data}
@@ -328,6 +259,11 @@ class Dashboard extends React.Component {
                   responsiveOptions={emailsSubscriptionChart.responsiveOptions}
                   listener={emailsSubscriptionChart.animation}
                 />
+              </CardHeader> */}
+              <CardHeader image className={classes.cardHeaderHover}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <img src={priceImage3} alt="..." />
+                </a>
               </CardHeader>
               <CardBody>
                 <div className={classes.cardHoverUnder}>
@@ -352,9 +288,9 @@ class Dashboard extends React.Component {
                     </Button>
                   </Tooltip>
                 </div>
-                <h4 className={classes.cardTitle}>Email Subscriptions</h4>
+                <h4 className={classes.cardTitle}>VR Video Title</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  VR Video Description
                 </p>
               </CardBody>
               <CardFooter chart>
@@ -366,7 +302,7 @@ class Dashboard extends React.Component {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart className={classes.cardHover}>
-              <CardHeader color="danger" className={classes.cardHeaderHover}>
+              {/* <CardHeader color="danger" className={classes.cardHeaderHover}>
                 <ChartistGraph
                   className="ct-chart-white-colors"
                   data={completedTasksChart.data}
@@ -374,6 +310,11 @@ class Dashboard extends React.Component {
                   options={completedTasksChart.options}
                   listener={completedTasksChart.animation}
                 />
+              </CardHeader> */}
+              <CardHeader image className={classes.cardHeaderHover}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <img src={priceImage1} alt="..." />
+                </a>
               </CardHeader>
               <CardBody>
                 <div className={classes.cardHoverUnder}>
@@ -398,9 +339,9 @@ class Dashboard extends React.Component {
                     </Button>
                   </Tooltip>
                 </div>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
+                <h4 className={classes.cardTitle}>VR Video Title</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  VR Video Description
                 </p>
               </CardBody>
               <CardFooter chart>
@@ -411,7 +352,7 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
         </GridContainer>
-        <h3>Manage Listings</h3>
+        <h3>Top Trending VR</h3>
         <br />
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
@@ -456,13 +397,11 @@ class Dashboard extends React.Component {
                 </div>
                 <h4 className={classes.cardProductTitle}>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Cozy 5 Stars Apartment
+                    VR Video Title
                   </a>
                 </h4>
                 <p className={classes.cardProductDesciprion}>
-                  The place is close to Barceloneta Beach and bus stop just 2
-                  min by walk and near to {'"'}Naviglio{'"'} where you can enjoy
-                  the main night life in Barcelona.
+                VR Video Description
                 </p>
               </CardBody>
               <CardFooter product>
@@ -517,13 +456,11 @@ class Dashboard extends React.Component {
                 </div>
                 <h4 className={classes.cardProductTitle}>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Office Studio
+                    VR Video Title
                   </a>
                 </h4>
                 <p className={classes.cardProductDesciprion}>
-                  The place is close to Metro Station and bus stop just 2 min by
-                  walk and near to {'"'}Naviglio{'"'} where you can enjoy the
-                  night life in London, UK.
+                  VR Video Description
                 </p>
               </CardBody>
               <CardFooter product>
@@ -578,13 +515,11 @@ class Dashboard extends React.Component {
                 </div>
                 <h4 className={classes.cardProductTitle}>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Beautiful Castle
+                    VR Video Title
                   </a>
                 </h4>
                 <p className={classes.cardProductDesciprion}>
-                  The place is close to Metro Station and bus stop just 2 min by
-                  walk and near to {'"'}Naviglio{'"'} where you can enjoy the
-                  main night life in Milan.
+                  VR Video Description
                 </p>
               </CardBody>
               <CardFooter product>
@@ -594,6 +529,83 @@ class Dashboard extends React.Component {
                 <div className={`${classes.stats} ${classes.productStats}`}>
                   <Place /> Milan, Italy
                 </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+        </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="warning" stats icon>
+                <CardIcon color="warning">
+                  <Icon>content_copy</Icon>
+                </CardIcon>
+                
+                <p className={classes.cardCategory}>VR Title</p>
+                <h3 className={classes.cardTitle}>
+                  {/* 49/50 <small>GB</small> */}
+                  Lorem
+                </h3>
+              </CardHeader>
+              <CardFooter stats>
+                {/* <div className={classes.stats}>
+                  <Danger>
+                    <Warning />
+                  </Danger>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                  </a>
+                </div> */}
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="success" stats icon>
+                <CardIcon color="success">
+                  <Store />
+                </CardIcon>
+                <p className={classes.cardCategory}>VR Title</p>
+                <h3 className={classes.cardTitle}>Lorem</h3>
+              </CardHeader>
+              <CardFooter stats>
+                {/* <div className={classes.stats}>
+                  <DateRange />
+                  Last 24 Hours
+                </div> */}
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="danger" stats icon>
+                <CardIcon color="danger">
+                  <Icon>info_outline</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>VR Title</p>
+                <h3 className={classes.cardTitle}>Lorem</h3>
+              </CardHeader>
+              <CardFooter stats>
+                {/* <div className={classes.stats}>
+                  <LocalOffer />
+                  Tracked from Github
+                </div> */}
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <i className="fab fa-twitter" />
+                </CardIcon>
+                <p className={classes.cardCategory}>VR Title</p>
+                <h3 className={classes.cardTitle}>Lorem</h3>
+              </CardHeader>
+              <CardFooter stats>
+                {/* <div className={classes.stats}>
+                  <Update />
+                  Just Updated
+                </div> */}
               </CardFooter>
             </Card>
           </GridItem>

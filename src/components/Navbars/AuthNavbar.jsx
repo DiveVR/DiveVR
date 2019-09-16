@@ -18,6 +18,7 @@ import React from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import TextField from '@material-ui/core/TextField';
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -28,6 +29,7 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import InputBase from '@material-ui/core/InputBase';
 
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
@@ -36,6 +38,7 @@ import PersonAdd from "@material-ui/icons/PersonAdd";
 import Fingerprint from "@material-ui/icons/Fingerprint";
 import LockOpen from "@material-ui/icons/LockOpen";
 import MonetizationOn from "@material-ui/icons/MonetizationOn";
+import SearchIcon from '@material-ui/icons/Search';
 
 // core components
 import Button from "components/CustomButtons/Button";
@@ -66,6 +69,7 @@ class AuthNavbar extends React.Component {
     const appBarClasses = cx({
       [" " + classes[color]]: color
     });
+
     var list = (
       <List className={classes.list}>
         <ListItem className={classes.listItem}>
@@ -87,7 +91,7 @@ class AuthNavbar extends React.Component {
           >
             <MonetizationOn className={classes.listItemIcon} />
             <ListItemText
-              primary={"Pricing"}
+              primary={"Home"}
               disableTypography={true}
               className={classes.listItemText}
             />
@@ -102,7 +106,7 @@ class AuthNavbar extends React.Component {
           >
             <PersonAdd className={classes.listItemIcon} />
             <ListItemText
-              primary={"Register"}
+              primary={"Experiences"}
               disableTypography={true}
               className={classes.listItemText}
             />
@@ -117,7 +121,7 @@ class AuthNavbar extends React.Component {
           >
             <Fingerprint className={classes.listItemIcon} />
             <ListItemText
-              primary={"Login"}
+              primary={"LiveVR"}
               disableTypography={true}
               className={classes.listItemText}
             />
@@ -134,7 +138,7 @@ class AuthNavbar extends React.Component {
           >
             <LockOpen className={classes.listItemIcon} />
             <ListItemText
-              primary={"Lock"}
+              primary={"Marketplace"}
               disableTypography={true}
               className={classes.listItemText}
             />
@@ -142,6 +146,7 @@ class AuthNavbar extends React.Component {
         </ListItem>
       </List>
     );
+
     return (
       <AppBar position="static" className={classes.appBar + appBarClasses}>
         <Toolbar className={classes.container}>

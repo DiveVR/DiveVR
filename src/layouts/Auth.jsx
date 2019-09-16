@@ -33,7 +33,7 @@ import register from "assets/img/register.jpeg";
 import login from "assets/img/login.jpeg";
 import lock from "assets/img/lock.jpeg";
 import error from "assets/img/clint-mckoy.jpg";
-import pricing from "assets/img/bg-pricing.jpeg";
+import pricing from "assets/img/spiderman.jpeg";
 
 class Pages extends React.Component {
   wrapper = React.createRef();
