@@ -1,13 +1,8 @@
 /*!
 
 =========================================================
-* Material Dashboard PRO React - v1.7.0
+
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
 
 =========================================================
 
@@ -93,7 +88,7 @@ class LoginPage extends React.Component {
                   </div>
                 </CardHeader>
                 <CardBody>
-                  <CustomInput
+                  {/* <CustomInput
                     labelText="First Name.."
                     id="firstname"
                     formControlProps={{
@@ -106,7 +101,7 @@ class LoginPage extends React.Component {
                         </InputAdornment>
                       )
                     }}
-                  />
+                  /> */}
                   <CustomInput
                     labelText="Email..."
                     id="email"
@@ -142,7 +137,7 @@ class LoginPage extends React.Component {
                 </CardBody>
                 <CardFooter className={classes.justifyContentCenter}>
                   <Button color="rose" simple size="lg" block>
-                    Let{"'"}s Go
+                    Let{"'"}s Dive
                   </Button>
                 </CardFooter>
               </Card>

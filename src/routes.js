@@ -39,6 +39,7 @@ import SweetAlert from "views/Components/SweetAlert.jsx";
 import TimelinePage from "views/Pages/Timeline.jsx";
 import Typography from "views/Components/Typography.jsx";
 import UserProfile from "views/Pages/UserProfile.jsx";
+import Home from "views/Pages/Home";
 import ValidationForms from "views/Forms/ValidationForms.jsx";
 import VectorMap from "views/Maps/VectorMap.jsx";
 import Widgets from "views/Widgets/Widgets.jsx";
@@ -77,6 +78,15 @@ var dashRoutes = [
         mini: "PP",
         rtlMini: "ع",
         component: PricingPage,
+        layout: "/auth"
+      },
+      {
+        path: "/pricing-page",
+        name: "Home",
+        rtlName: "عالتسعير",
+        mini: "PP",
+        rtlMini: "ع",
+        component: Home,
         layout: "/auth"
       },
       {

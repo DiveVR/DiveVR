@@ -139,4 +139,4 @@ PricingPage.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(pricingPageStyle)(PricingPage);
+export default withStyles(pricingPageStyle)(Home);
