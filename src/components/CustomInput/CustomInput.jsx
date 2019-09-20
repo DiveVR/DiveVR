@@ -40,6 +40,7 @@ function CustomInput({ ...props }) {
     white,
     inputRootCustomClasses,
     success,
+    onChange,
     helperText
   } = props;
 
@@ -74,6 +75,7 @@ function CustomInput({ ...props }) {
     [classes.labelRootSuccess]: success && !error
   });
   return (
+    //<input type = {this.props.type} onChange={this.props.onchange} name={this.props.name} placeholder = {this.props.promptText}/>
     <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
@@ -115,6 +117,7 @@ CustomInput.propTypes = {
   success: PropTypes.bool,
   white: PropTypes.bool,
   helperText: PropTypes.node
+
 };
 
 export default withStyles(customInputStyle)(CustomInput);
