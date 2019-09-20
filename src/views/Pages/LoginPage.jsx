@@ -11,11 +11,14 @@
 */
 import React from "react";
 import PropTypes from "prop-types";
+//import fire from "../../components/firebase/firebaseInit";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
+import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
 
 // @material-ui/icons
 import Face from "@material-ui/icons/Face";
@@ -39,7 +42,9 @@ class LoginPage extends React.Component {
     super(props);
     // we use this to make the card to appear after the page has been rendered
     this.state = {
-      cardAnimaton: "cardHidden"
+      cardAnimaton: "cardHidden",
+      email: "",
+      password: ""
     };
   }
   componentDidMount() {
@@ -55,6 +60,34 @@ class LoginPage extends React.Component {
     clearTimeout(this.timeOutFunction);
     this.timeOutFunction = null;
   }
+
+  test = () => {
+    console.log(this.state.email)
+    console.log(this.state.password)
+
+    //login here
+    // firebase.userLogin(this.state.email, this.state.password).then(success => {
+    //   if (success) {
+    //     console.log("Login successfully")
+    //   } else {
+    //     console.log("Login failed")
+    //   }
+    // })
+
+    //create user
+    // firebase.createUser("Abraham", this.state.email, this.state.password).then(success => {
+      
+    // })
+  }
+
+  updateEmail = e => {
+    this.state.email = e.target.value
+  }
+
+  updatePassword = e => {
+    this.state.password = e.target.value
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -102,9 +135,11 @@ class LoginPage extends React.Component {
                       )
                     }}
                   /> */}
-                  <CustomInput
+                  {/* <CustomInput
                     labelText="Email..."
                     id="email"
+                    //inputProps="Kimleng"
+                    //onChange={this.updateInput}
                     formControlProps={{
                       fullWidth: true
                     }}
@@ -115,8 +150,30 @@ class LoginPage extends React.Component {
                         </InputAdornment>
                       )
                     }}
+                  /> */}
+                  <TextField
+                    id="standard-email-input"
+                    label="Email"
+                    onChange={this.updateEmail}
+                    className={classes.textField}
+                    fullWidth
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    margin="normal"
                   />
-                  <CustomInput
+
+                  <TextField
+                    id="standard-password-input"
+                    label="Password"
+                    onChange={this.updatePassword}
+                    className={classes.textField}
+                    fullWidth
+                    type="password"
+                    autoComplete="current-password"
+                    margin="normal"
+                  />
+                  {/* <CustomInput
                     labelText="Password"
                     id="password"
                     formControlProps={{
@@ -132,11 +189,11 @@ class LoginPage extends React.Component {
                       ),
                       type: "password",
                       autoComplete: "off"
-                    }}
-                  />
+                    }} */}
+                  {/* /> */}
                 </CardBody>
                 <CardFooter className={classes.justifyContentCenter}>
-                  <Button color="rose" simple size="lg" block>
+                  <Button onClick= {this.test}  color="rose" simple size="lg" block>
                     Let{"'"}s Dive
                   </Button>
                 </CardFooter>
