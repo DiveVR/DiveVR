@@ -1,5 +1,5 @@
 import firebase from 'firebase'
 import { firebaseConfig } from "../config/config.js"
 
-var fire = firebase.initializeApp(firebaseConfig)
-export default fire
+export var fire = firebase.initializeApp(firebaseConfig)
+export var storage = firebase.storage()
