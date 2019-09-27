@@ -11,7 +11,7 @@
 */
 import React from "react";
 import PropTypes from "prop-types";
-//import fire from "../../components/firebase/firebaseInit";
+import {login} from "../../components/firebase/firebaseAuth.js";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -61,23 +61,13 @@ class LoginPage extends React.Component {
     this.timeOutFunction = null;
   }
 
-  test = () => {
-    console.log(this.state.email)
-    console.log(this.state.password)
-
-    //login here
-    // firebase.userLogin(this.state.email, this.state.password).then(success => {
-    //   if (success) {
-    //     console.log("Login successfully")
-    //   } else {
-    //     console.log("Login failed")
-    //   }
-    // })
-
-    //create user
-    // firebase.createUser("Abraham", this.state.email, this.state.password).then(success => {
-      
-    // })
+  handleLogin = () => {
+    login(this.state.email, this.state.password).then(() => {
+      // Handle successful login here
+    })
+    .catch(error => {
+      // Handle failed login here
+    })
   }
 
   updateEmail = e => {
@@ -193,7 +183,7 @@ class LoginPage extends React.Component {
                   {/* /> */}
                 </CardBody>
                 <CardFooter className={classes.justifyContentCenter}>
-                  <Button onClick= {this.test}  color="rose" simple size="lg" block>
+                  <Button onClick= {this.handleLogin}  color="rose" simple size="lg" block>
                     Let{"'"}s Dive
                   </Button>
                 </CardFooter>
