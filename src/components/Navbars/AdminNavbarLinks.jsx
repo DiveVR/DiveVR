@@ -287,7 +287,7 @@ class HeaderLinks extends React.Component {
                 <Paper className={classes.dropdown}>
                   <ClickAwayListener onClickAway={this.handleCloseProfile}>
                     <MenuList role="menu">
-                      <MenuItem
+                      {/* <MenuItem
                         onClick={this.handleCloseProfile}
                         className={dropdownItem}
                       >
@@ -299,7 +299,7 @@ class HeaderLinks extends React.Component {
                       >
                         {rtlActive ? "الإعدادات" : "Settings"}
                       </MenuItem>
-                      <Divider light />
+                      <Divider light /> */}
                       <MenuItem
                         onClick={this.handleCloseProfile}
                         className={dropdownItem}
