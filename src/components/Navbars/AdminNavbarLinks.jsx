@@ -107,7 +107,7 @@ class HeaderLinks extends React.Component {
             className={classes.headerLinksSvg + " " + classes.searchIcon}
           />
         </Button>
-        <Button
+        {/* <Button
           color="transparent"
           simple
           aria-label="Dashboard"
@@ -131,9 +131,9 @@ class HeaderLinks extends React.Component {
               {rtlActive ? "لوحة القيادة" : "Dashboard"}
             </span>
           </Hidden>
-        </Button>
+        </Button> */}
         <div className={managerClasses}>
-          <Button
+          {/* <Button
             color="transparent"
             justIcon
             aria-label="Notifications"
@@ -166,7 +166,7 @@ class HeaderLinks extends React.Component {
                 {rtlActive ? "إعلام" : "Notification"}
               </span>
             </Hidden>
-          </Button>
+          </Button> */}
           <Popper
             open={openNotification}
             anchorEl={this.anchorNotification}
@@ -287,7 +287,7 @@ class HeaderLinks extends React.Component {
                 <Paper className={classes.dropdown}>
                   <ClickAwayListener onClickAway={this.handleCloseProfile}>
                     <MenuList role="menu">
-                      <MenuItem
+                      {/* <MenuItem
                         onClick={this.handleCloseProfile}
                         className={dropdownItem}
                       >
@@ -299,7 +299,7 @@ class HeaderLinks extends React.Component {
                       >
                         {rtlActive ? "الإعدادات" : "Settings"}
                       </MenuItem>
-                      <Divider light />
+                      <Divider light /> */}
                       <MenuItem
                         onClick={this.handleCloseProfile}
                         className={dropdownItem}

@@ -394,7 +394,7 @@ class Sidebar extends React.Component {
                 className={itemText + " " + classes.userItemText}
               />
             </NavLink>
-            <Collapse in={this.state.openAvatar} unmountOnExit>
+            {/* <Collapse in={this.state.openAvatar} unmountOnExit>
               <List className={classes.list + " " + classes.collapseList}>
                 <ListItem className={classes.collapseItem}>
                   <NavLink
@@ -450,7 +450,7 @@ class Sidebar extends React.Component {
                   </NavLink>
                 </ListItem>
               </List>
-            </Collapse>
+            </Collapse> */}
           </ListItem>
         </List>
       </div>

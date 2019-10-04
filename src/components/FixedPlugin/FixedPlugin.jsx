@@ -71,7 +71,7 @@ class FixedPlugin extends Component {
           "fixed-plugin" + (this.props.rtlActive ? " fixed-plugin-rtl" : "")
         }
       >
-        <div id="fixedPluginClasses" className={this.props.fixedClasses}>
+        {/* <div id="fixedPluginClasses" className={this.props.fixedClasses}>
           <div onClick={this.handleClick}>
             <i className="fa fa-cog fa-2x" />
           </div>
@@ -307,7 +307,7 @@ class FixedPlugin extends Component {
               <br />
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }

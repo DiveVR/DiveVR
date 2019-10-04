@@ -45,7 +45,7 @@ function Footer({ ...props }) {
   return (
     <footer className={classes.footer}>
       <div className={container}>
-        <div className={classes.left}>
+        {/* <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="#home" className={block}>
@@ -68,8 +68,8 @@ function Footer({ ...props }) {
               </a>
             </ListItem>
           </List>
-        </div>
-        <p className={classes.right}>
+        </div> */}
+        {/* <p className={classes.right}>
           &copy; {1900 + new Date().getYear()}{" "}
           <a
             href="https://www.creative-tim.com?ref=mdpr-footer"
@@ -81,7 +81,7 @@ function Footer({ ...props }) {
           {rtlActive
             ? ", مصنوعة مع الحب لشبكة الإنترنت أفضل"
             : ", made with love for a better web"}
-        </p>
+        </p> */}
       </div>
     </footer>
   );
