@@ -71,15 +71,15 @@ var dashRoutes = [
     icon: Image,
     state: "pageCollapse",
     views: [
-      // {
-      //   path: "/pricing-page",
-      //   name: "Pricing Page",
-      //   rtlName: "عالتسعير",
-      //   mini: "PP",
-      //   rtlMini: "ع",
-      //   component: PricingPage,
-      //   layout: "/auth"
-      // },
+      {
+        path: "/pricing-page",
+        name: "Home Page",
+        rtlName: "عالتسعير",
+        mini: "PP",
+        rtlMini: "ع",
+        component: PricingPage,
+        layout: "/auth"
+      },
       // {
       //   path: "/pricing-page",
       //   name: "Home",
