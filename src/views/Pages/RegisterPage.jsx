@@ -11,6 +11,7 @@
 */
 import React from "react";
 import PropTypes from "prop-types";
+import {signUp} from "../../components/firebase/firebaseAuth.js";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -25,6 +26,7 @@ import Code from "@material-ui/icons/Code";
 import Group from "@material-ui/icons/Group";
 import Face from "@material-ui/icons/Face";
 import Email from "@material-ui/icons/Email";
+import TextField from '@material-ui/core/TextField';
 // import LockOutline from "@material-ui/icons/LockOutline";
 import Check from "@material-ui/icons/Check";
 
@@ -43,7 +45,11 @@ class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: []
+      checked: [],
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: ""
     };
     this.handleToggle = this.handleToggle.bind(this);
   }
@@ -62,6 +68,31 @@ class RegisterPage extends React.Component {
       checked: newChecked
     });
   }
+
+  updateFirstName = fn => {
+    this.state.firstName = fn.target.value
+  }
+
+  updateLastName = ln => {
+    this.state.lastName = ln.target.value
+  }
+
+  updateEmail = e => {
+    this.state.email = e.target.value
+  }
+
+  updatePassword = p => {
+    this.state.password = p.target.value
+  }
+
+  handleSignup = () => {
+    signUp(this.state.firstName, this.state.lastName, this.state.email, this.state.password).then(() => {
+      // Handle successful signup here
+    }).catch(err => {
+      // Handle unsuccessful signup here
+    })
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -109,7 +140,7 @@ class RegisterPage extends React.Component {
                       <h4 className={classes.socialTitle}>or be classical</h4>
                     </div>
                     <form className={classes.form}>
-                      <CustomInput
+                      {/* <CustomInput
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses
@@ -125,8 +156,9 @@ class RegisterPage extends React.Component {
                           ),
                           placeholder: "First Name..."
                         }}
-                      />
-                      <CustomInput
+                      /> */}
+
+                      {/* <CustomInput
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses
@@ -142,8 +174,9 @@ class RegisterPage extends React.Component {
                           ),
                           placeholder: "Last Name..."
                         }}
-                      />
-                      <CustomInput
+                      /> */}
+
+                      {/* <CustomInput
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses
@@ -159,8 +192,9 @@ class RegisterPage extends React.Component {
                           ),
                           placeholder: "Email..."
                         }}
-                      />
-                      <CustomInput
+                      /> */}
+
+                      {/* <CustomInput
                         formControlProps={{
                           fullWidth: true,
                           className: classes.customFormControlClasses
@@ -178,7 +212,55 @@ class RegisterPage extends React.Component {
                           ),
                           placeholder: "Password..."
                         }}
+                      /> */}
+
+                      <TextField
+                        id="standard-text-input"
+                        label="First Name"
+                        onChange={this.updateFirstName}
+                        className={classes.textField}
+                        fullWidth
+                        type="text"
+                        name="text"
+                        autoComplete="text"
+                        margin="normal"
                       />
+
+                      <TextField
+                        id="standard-text-input"
+                        label="Last Name"
+                        onChange={this.updateLastName}
+                        className={classes.textField}
+                        fullWidth
+                        type="text"
+                        name="text"
+                        autoComplete="text"
+                        margin="normal"
+                      />
+
+                      <TextField
+                        id="standard-email-input"
+                        label="Email Address"
+                        onChange={this.updateEmail}
+                        className={classes.textField}
+                        fullWidth
+                        type="email"
+                        name="email"
+                        autoComplete="email"
+                        margin="normal"
+                      />
+
+                    <TextField
+                      id="standard-password-input"
+                      label="Password"
+                      onChange={this.updatePassword}
+                      className={classes.textField}
+                      fullWidth
+                      type="password"
+                      autoComplete="current-password"
+                      margin="normal"
+                    />
+
                       <FormControlLabel
                         classes={{
                           root: classes.checkboxLabelControl,
@@ -206,7 +288,7 @@ class RegisterPage extends React.Component {
                         }
                       />
                       <div className={classes.center}>
-                        <Button round color="primary">
+                        <Button onClick= {this.handleSignup} round color="primary">
                           Get started
                         </Button>
                       </div>
