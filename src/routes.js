@@ -44,6 +44,8 @@ import ValidationForms from "views/Forms/ValidationForms.jsx";
 import VectorMap from "views/Maps/VectorMap.jsx";
 import Widgets from "views/Widgets/Widgets.jsx";
 import Wizard from "views/Forms/Wizard.jsx";
+//import Homepage from "views/Pages/HomePage"
+import Homepage from "views/Pages/index"
 
 // @material-ui/icons
 import Apps from "@material-ui/icons/Apps";
@@ -56,6 +58,12 @@ import Timeline from "@material-ui/icons/Timeline";
 import WidgetsIcon from "@material-ui/icons/Widgets";
 
 var dashRoutes = [
+  {
+    path: "/homepage",
+    name: "Homepage",
+    component: Homepage
+    //layout: "/plain"
+  },
   {
     path: "/dashboard",
     name: "Dashboard",

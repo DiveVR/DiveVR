@@ -29,114 +29,97 @@ import Button from "components/CustomButtons/Button.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 
+//for the grid list horizontal
+import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import IconButton from '@material-ui/core/IconButton';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+import image from '../../assets/img/faces/avatar.jpg';
+
 import pricingPageStyle from "assets/jss/material-dashboard-pro-react/views/pricingPageStyle.jsx";
 
-class PricingPage extends React.Component {
-  render() {
-    const { classes } = this.props;
+//styling
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    flexWrap: 'nowrap',
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
+  },
+  title: {
+    color: theme.palette.primary.light,
+  },
+  titleBar: {
+    background:
+      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
+}));
+ 
+const tileData = [
+  {
+    img: image,
+    title: 'Image',
+    author: 'author',
+  },
+  {
+    img: image,
+    title: 'Image',
+    author: 'author',
+  },
+  {
+    img: image,
+    title: 'Image',
+    author: 'author',
+  },
+  {
+    img: image,
+    title: 'Image',
+    author: 'author',
+  },
+  {
+    img: image,
+    title: 'Image',
+    author: 'author',
+  },
+  {
+    img: image,
+    title: 'Image',
+    author: 'author',
+  },
+];
+
+
+export default function PricingPage() {
+    const classes = useStyles();
     return (
-      <div className={classes.container}>
-        <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={6}>
-            <h2 className={classes.title}>Pick the best plan for you</h2>
-            <h5 className={classes.description}>
-              You have Free Unlimited Updates and Premium Support on each
-              package.
-            </h5>
-          </GridItem>
-        </GridContainer>
-        <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={3}>
-            <Card pricing plain>
-              <CardBody pricing plain>
-                <h6 className={classes.cardCategory}>Freelancer</h6>
-                <div className={classes.icon}>
-                  <Icon className={classes.iconWhite}>weekend</Icon>
-                </div>
-                <h3
-                  className={`${classes.cardTitleWhite} ${classes.marginTop30}`}
-                >
-                  FREE
-                </h3>
-                <p className={classes.cardCategory}>
-                  This is good if your company size is between 2 and 10 Persons.
-                </p>
-                <Button round color="white">
-                  Choose plan
-                </Button>
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={3}>
-            <Card pricing raised>
-              <CardBody pricing>
-                <h6 className={classes.cardCategory}>SMALL COMPANY</h6>
-                <div className={classes.icon}>
-                  <Home className={classes.iconRose} />
-                </div>
-                <h3 className={`${classes.cardTitle} ${classes.marginTop30}`}>
-                  $29
-                </h3>
-                <p className={classes.cardDescription}>
-                  This is good if your company size is between 2 and 10 Persons.
-                </p>
-                <Button round color="rose">
-                  Choose plan
-                </Button>
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={3}>
-            <Card pricing plain>
-              <CardBody pricing plain>
-                <h6 className={classes.cardCategory}>MEDIUM COMPANY</h6>
-                <div className={classes.icon}>
-                  <Business className={classes.iconWhite} />
-                </div>
-                <h3
-                  className={`${classes.cardTitleWhite} ${classes.marginTop30}`}
-                >
-                  $69
-                </h3>
-                <p className={classes.cardCategory}>
-                  This is good if your company size is between 11 and 99
-                  Persons.
-                </p>
-                <Button round color="white">
-                  Choose plan
-                </Button>
-              </CardBody>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={3}>
-            <Card pricing plain>
-              <CardBody pricing plain>
-                <h6 className={classes.cardCategory}>ENTERPRISE</h6>
-                <div className={classes.icon}>
-                  <AccountBalance className={classes.iconWhite} />
-                </div>
-                <h3
-                  className={`${classes.cardTitleWhite} ${classes.marginTop30}`}
-                >
-                  $159
-                </h3>
-                <p className={classes.cardCategory}>
-                  This is good if your company size is 99+ persons.
-                </p>
-                <Button round color="white">
-                  Choose plan
-                </Button>
-              </CardBody>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </div>
+      <div className={classes.root}>
+      <GridList className={classes.gridList} cols={2.5}>
+        {tileData.map(tile => (
+          <GridListTile key={tile.img}>
+            <img src={tile.img} alt={tile.title} />
+            <GridListTileBar
+              title={tile.title}
+              classes={{
+                root: classes.titleBar,
+                title: classes.title,
+              }}
+              actionIcon={
+                <IconButton aria-label={`star ${tile.title}`}>
+                  <StarBorderIcon className={classes.title} />
+                </IconButton>
+              }
+            />
+          </GridListTile>
+        ))}
+      </GridList>
+    </div>
     );
-  }
 }
-
-PricingPage.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(pricingPageStyle)(PricingPage);
