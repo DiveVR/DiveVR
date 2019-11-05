@@ -1,0 +1,14 @@
+#upload_desc {
+    position: relative;
+    top: 40%;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    left: 22%;
+}
+
+#upload_img {
+    position: relative;
+    top: 15%;
+    left: 40%;  
+}
