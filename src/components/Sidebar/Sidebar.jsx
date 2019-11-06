@@ -16,6 +16,7 @@
 */
 /*eslint-disable*/
 import React from "react";
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -31,6 +32,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Hidden from "@material-ui/core/Hidden";
 import Collapse from "@material-ui/core/Collapse";
 import Icon from "@material-ui/core/Icon";
+import Typography from '@material-ui/core/Typography'
 
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.jsx";
@@ -377,26 +379,17 @@ class Sidebar extends React.Component {
               className={classes.itemLink + " " + classes.userCollapseButton}
               onClick={() => this.openCollapse("openAvatar")}
             >
-              <ListItemText
-                primary={rtlActive ? "تانيا أندرو" : "Abraham Tesfay"}
-                secondary={
-                  <b
-                    className={
-                      caret +
-                      " " +
-                      classes.userCaret +
-                      " " +
-                      (this.state.openAvatar ? classes.caretActive : "")
-                    }
-                  />
-                }
-                disableTypography={true}
-                className={itemText + " " + classes.userItemText}
-              />
+              <Link to="/admin/user-profile">
+                <ListItemText
+                  disableTypography={true}
+                  primary={<Typography type="body2" style={{ color: '#FFFFFF' }}>Abraham Tesfay</Typography>}
+                  className={itemText + " " + classes.userItemText}
+                />
+              </Link>
             </NavLink>
-            {/* <Collapse in={this.state.openAvatar} unmountOnExit>
+            <Collapse in={this.state.openAvatar} unmountOnExit>
               <List className={classes.list + " " + classes.collapseList}>
-                <ListItem className={classes.collapseItem}>
+                {/* <ListItem className={classes.collapseItem}>
                   <NavLink
                     to="#"
                     className={
@@ -412,8 +405,8 @@ class Sidebar extends React.Component {
                       className={collapseItemText}
                     />
                   </NavLink>
-                </ListItem>
-                <ListItem className={classes.collapseItem}>
+                </ListItem> */}
+                {/* <ListItem className={classes.collapseItem}>
                   <NavLink
                     to="#"
                     className={
@@ -448,9 +441,9 @@ class Sidebar extends React.Component {
                       className={collapseItemText}
                     />
                   </NavLink>
-                </ListItem>
+                </ListItem> */}
               </List>
-            </Collapse> */}
+            </Collapse>
           </ListItem>
         </List>
       </div>
@@ -483,20 +476,12 @@ class Sidebar extends React.Component {
       });
     var brand = (
       <div className={logoClasses}>
-        <a
-          href="https://www.creative-tim.com?ref=mdpr-sidebar"
-          target="_blank"
-          className={logoMini}
-        >
+        <Link to="/admin/home-page" className={logoMini}>
           <img src={logo} alt="logo" className={classes.img} />
-        </a>
-        <a
-          href="https://www.creative-tim.com?ref=mdpr-sidebar"
-          target="_blank"
-          className={logoNormal}
-        >
+        </Link>
+        <Link to="/admin/home-page" className={logoNormal}>
           {logoText}
-        </a>
+        </Link>
       </div>
     );
     const drawerPaper =

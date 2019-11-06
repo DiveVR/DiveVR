@@ -64,10 +64,15 @@ class LoginPage extends React.Component {
   handleLogin = () => {
     login(this.state.email, this.state.password).then(() => {
       // Handle successful login here
+      this.redirectToHomepage()
     })
     .catch(error => {
       // Handle failed login here
     })
+  }
+
+  redirectToHomepage = () => {
+    this.props.history.push(`/admin/homepage`)
   }
 
   updateEmail = e => {

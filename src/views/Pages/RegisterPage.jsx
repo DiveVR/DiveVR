@@ -11,6 +11,7 @@
 */
 import React from "react";
 import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom"
 import {signUp} from "../../components/firebase/firebaseAuth.js";
 
 // @material-ui/core components
@@ -88,9 +89,14 @@ class RegisterPage extends React.Component {
   handleSignup = () => {
     signUp(this.state.firstName, this.state.lastName, this.state.email, this.state.password).then(() => {
       // Handle successful signup here
+      this.redirectToLogin()
     }).catch(err => {
       // Handle unsuccessful signup here
     })
+  }
+
+  redirectToLogin = () => {
+    this.props.history.push(`/login-page`)
   }
 
   render() {

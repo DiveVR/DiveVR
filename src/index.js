@@ -24,8 +24,12 @@ import RtlLayout from "layouts/RTL.jsx";
 import AdminLayout from "layouts/Admin.jsx";
 import Homepage from "views/Pages/index"
 import Uploadpage from "views/Pages/Upload"
+import UserProfile from "views/Pages/UserProfile";
 
 import "assets/scss/material-dashboard-pro-react.scss?v=1.7.0";
+import RegisterPage from "views/Pages/RegisterPage";
+import LoginPage from "views/Pages/LoginPage";
+
 
 const hist = createBrowserHistory();
 
@@ -35,9 +39,12 @@ ReactDOM.render(
       <Route path="/rtl" component={RtlLayout} />
       <Route path="/auth" component={AuthLayout} />
       <Route path="/admin" component={AdminLayout} />
-      <Route path="/homepage" component={Homepage} />
-      <Route path="/uploadpage" component={Uploadpage} />
-      <Redirect from="/" to="/admin/dashboard" />
+      <Route path="/home-page" component={Homepage} />
+      <Route path="/user-profile" component={UserProfile} />
+      <Route path="/upload-page" component={Uploadpage} />
+      <Route path="/register-page" component={RegisterPage} />
+      <Route path="/login-page" component={LoginPage} />
+      <Redirect from="/" to="/auth/login-page" />
     </Switch>
   </Router>,
   document.getElementById("root")

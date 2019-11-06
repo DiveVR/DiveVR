@@ -56,13 +56,16 @@ import Image from "@material-ui/icons/Image";
 import Place from "@material-ui/icons/Place";
 import Timeline from "@material-ui/icons/Timeline";
 import WidgetsIcon from "@material-ui/icons/Widgets";
+import Uploadpage from "views/Pages/Upload";
 
 var dashRoutes = [
   {
-    path: "/homepage",
+    path: "/home-page",
     name: "Homepage",
-    component: Homepage
-    //layout: "/plain"
+    component: Homepage,
+    mini: "H",
+    rtlMini: "هعذا",
+    layout: "/admin"
   },
   {
     path: "/dashboard",
@@ -74,20 +77,47 @@ var dashRoutes = [
   },
   {
     collapse: true,
-    name: "Pages",
+    name: "Features",
     rtlName: "صفحات",
     icon: Image,
     state: "pageCollapse",
     views: [
       {
-        path: "/pricing-page",
-        name: "Home Page",
-        rtlName: "عالتسعير",
-        mini: "PP",
-        rtlMini: "ع",
-        component: PricingPage,
+        path: "/upload-page",
+        name: "Upload",
+        rtlName: "صفحة الخطأ",
+        mini: "U",
+        rtlMini: "البريد",
+        component: Uploadpage,
+        layout: "/admin"
+      },
+      {
+        path: "/login-page",
+        // name: "Login Page",
+        // rtlName: "هعذاتسجيل الدخول",
+        // mini: "L",
+        // rtlMini: "هعذا",
+        component: LoginPage,
         layout: "/auth"
       },
+      {
+        path: "/register-page",
+        // name: "Register Page",
+        // rtlName: "تسجيل",
+        // mini: "R",
+        // rtlMini: "صع",
+        component: RegisterPage,
+        layout: "/auth"
+      },
+      {
+        path: "/user-profile",
+        // name: "User Profile",
+        // rtlName: "ملف تعريفي للمستخدم",
+        // mini: "UP",
+        // rtlMini: "شع",
+        component: UserProfile,
+        layout: "/admin"
+      }
       // {
       //   path: "/pricing-page",
       //   name: "Home",
@@ -115,24 +145,6 @@ var dashRoutes = [
       //   component: TimelinePage,
       //   layout: "/admin"
       // },
-      {
-        path: "/login-page",
-        name: "Login Page",
-        rtlName: "هعذاتسجيل الدخول",
-        mini: "L",
-        rtlMini: "هعذا",
-        component: LoginPage,
-        layout: "/auth"
-      },
-      {
-        path: "/register-page",
-        name: "Register Page",
-        rtlName: "تسجيل",
-        mini: "R",
-        rtlMini: "صع",
-        component: RegisterPage,
-        layout: "/auth"
-      },
       // {
       //   path: "/lock-screen-page",
       //   name: "Lock Screen Page",
@@ -142,117 +154,99 @@ var dashRoutes = [
       //   component: LockScreenPage,
       //   layout: "/auth"
       // },
-      {
-        path: "/user-page",
-        name: "User Profile",
-        rtlName: "ملف تعريفي للمستخدم",
-        mini: "UP",
-        rtlMini: "شع",
-        component: UserProfile,
-        layout: "/admin"
-      },
-      {
-        path: "/error-page",
-        name: "Error Page",
-        rtlName: "صفحة الخطأ",
-        mini: "E",
-        rtlMini: "البريد",
-        component: ErrorPage,
-        layout: "/auth"
-      }
     ]
   },
-  {
-    collapse: true,
-    name: "Components",
-    rtlName: "المكونات",
-    icon: Apps,
-    state: "componentsCollapse",
-    views: [
-      {
-        collapse: true,
-        name: "Multi Level Collapse",
-        rtlName: "انهيار متعدد المستويات",
-        mini: "MC",
-        rtlMini: "ر",
-        state: "multiCollapse",
-        views: [
-          {
-            path: "/buttons",
-            name: "Buttons",
-            rtlName: "وصفت",
-            mini: "B",
-            rtlMini: "ب",
-            component: Buttons,
-            layout: "/admin"
-          }
-        ]
-      },
-      {
-        path: "/buttons",
-        name: "Buttons",
-        rtlName: "وصفت",
-        mini: "B",
-        rtlMini: "ب",
-        component: Buttons,
-        layout: "/admin"
-      },
-      {
-        path: "/grid-system",
-        name: "Grid System",
-        rtlName: "نظام الشبكة",
-        mini: "GS",
-        rtlMini: "زو",
-        component: GridSystem,
-        layout: "/admin"
-      },
-      {
-        path: "/panels",
-        name: "Panels",
-        rtlName: "لوحات",
-        mini: "P",
-        rtlMini: "ع",
-        component: Panels,
-        layout: "/admin"
-      },
-      {
-        path: "/sweet-alert",
-        name: "Sweet Alert",
-        rtlName: "الحلو تنبيه",
-        mini: "SA",
-        rtlMini: "ومن",
-        component: SweetAlert,
-        layout: "/admin"
-      },
-      {
-        path: "/notifications",
-        name: "Notifications",
-        rtlName: "إخطارات",
-        mini: "N",
-        rtlMini: "ن",
-        component: Notifications,
-        layout: "/admin"
-      },
-      {
-        path: "/icons",
-        name: "Icons",
-        rtlName: "الرموز",
-        mini: "I",
-        rtlMini: "و",
-        component: Icons,
-        layout: "/admin"
-      },
-      {
-        path: "/typography",
-        name: "Typography",
-        rtlName: "طباعة",
-        mini: "T",
-        rtlMini: "ر",
-        component: Typography,
-        layout: "/admin"
-      }
-    ]
-  },
+  // {
+  //   collapse: true,
+  //   name: "Components",
+  //   rtlName: "المكونات",
+  //   icon: Apps,
+  //   state: "componentsCollapse",
+  //   views: [
+  //     {
+  //       collapse: true,
+  //       name: "Multi Level Collapse",
+  //       rtlName: "انهيار متعدد المستويات",
+  //       mini: "MC",
+  //       rtlMini: "ر",
+  //       state: "multiCollapse",
+  //       views: [
+  //         {
+  //           path: "/buttons",
+  //           name: "Buttons",
+  //           rtlName: "وصفت",
+  //           mini: "B",
+  //           rtlMini: "ب",
+  //           component: Buttons,
+  //           layout: "/admin"
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path: "/buttons",
+  //       name: "Buttons",
+  //       rtlName: "وصفت",
+  //       mini: "B",
+  //       rtlMini: "ب",
+  //       component: Buttons,
+  //       layout: "/admin"
+  //     },
+  //     {
+  //       path: "/grid-system",
+  //       name: "Grid System",
+  //       rtlName: "نظام الشبكة",
+  //       mini: "GS",
+  //       rtlMini: "زو",
+  //       component: GridSystem,
+  //       layout: "/admin"
+  //     },
+  //     {
+  //       path: "/panels",
+  //       name: "Panels",
+  //       rtlName: "لوحات",
+  //       mini: "P",
+  //       rtlMini: "ع",
+  //       component: Panels,
+  //       layout: "/admin"
+  //     },
+  //     {
+  //       path: "/sweet-alert",
+  //       name: "Sweet Alert",
+  //       rtlName: "الحلو تنبيه",
+  //       mini: "SA",
+  //       rtlMini: "ومن",
+  //       component: SweetAlert,
+  //       layout: "/admin"
+  //     },
+  //     {
+  //       path: "/notifications",
+  //       name: "Notifications",
+  //       rtlName: "إخطارات",
+  //       mini: "N",
+  //       rtlMini: "ن",
+  //       component: Notifications,
+  //       layout: "/admin"
+  //     },
+  //     {
+  //       path: "/icons",
+  //       name: "Icons",
+  //       rtlName: "الرموز",
+  //       mini: "I",
+  //       rtlMini: "و",
+  //       component: Icons,
+  //       layout: "/admin"
+  //     },
+  //     {
+  //       path: "/typography",
+  //       name: "Typography",
+  //       rtlName: "طباعة",
+  //       mini: "T",
+  //       rtlMini: "ر",
+  //       component: Typography,
+  //       layout: "/admin"
+  //     }
+  //   ]
+  // },
   // {
   //   collapse: true,
   //   name: "Forms",

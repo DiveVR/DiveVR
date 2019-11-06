@@ -83,7 +83,7 @@ class HeaderLinks extends React.Component {
     });
     return (
       <div className={wrapper}>
-        <CustomInput
+        {/* <CustomInput
           rtlActive={rtlActive}
           formControlProps={{
             className: classes.top + " " + classes.search
@@ -106,7 +106,7 @@ class HeaderLinks extends React.Component {
           <Search
             className={classes.headerLinksSvg + " " + classes.searchIcon}
           />
-        </Button>
+        </Button> */}
         {/* <Button
           color="transparent"
           simple
