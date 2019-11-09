@@ -33,6 +33,12 @@ import LoginPage from "views/Pages/LoginPage";
 
 const hist = createBrowserHistory();
 
+fetch('/users')
+  .then(res => res.json())
+  .then(users => {
+    console.log(users)
+  })
+
 ReactDOM.render(
   <Router history={hist}>
     <Switch>

@@ -2,11 +2,12 @@
 
 # dependencies
 /node_modules
+/react/node_modules
 /.pnp
 .pnp.js
 
 # config file
-src/components/config/config.js
+/react/src/components/config/config.js
 
 # testing
 /coverage
@@ -15,6 +16,7 @@ src/components/config/config.js
 /build
 
 # misc
+*.env
 .DS_Store
 .env.local
 .env.development.local
