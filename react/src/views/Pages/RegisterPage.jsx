@@ -1,32 +1,17 @@
-/*!
 
-=========================================================
-
-=========================================================
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom"
 import {signUp} from "../../components/firebase/firebaseAuth.js";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import Timeline from "@material-ui/icons/Timeline";
 import Code from "@material-ui/icons/Code";
 import Group from "@material-ui/icons/Group";
-import Face from "@material-ui/icons/Face";
-import Email from "@material-ui/icons/Email";
 import TextField from '@material-ui/core/TextField';
 // import LockOutline from "@material-ui/icons/LockOutline";
 import Check from "@material-ui/icons/Check";
@@ -35,7 +20,6 @@ import Check from "@material-ui/icons/Check";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
@@ -146,80 +130,6 @@ class RegisterPage extends React.Component {
                       <h4 className={classes.socialTitle}>or be classical</h4>
                     </div>
                     <form className={classes.form}>
-                      {/* <CustomInput
-                        formControlProps={{
-                          fullWidth: true,
-                          className: classes.customFormControlClasses
-                        }}
-                        inputProps={{
-                          startAdornment: (
-                            <InputAdornment
-                              position="start"
-                              className={classes.inputAdornment}
-                            >
-                              <Face className={classes.inputAdornmentIcon} />
-                            </InputAdornment>
-                          ),
-                          placeholder: "First Name..."
-                        }}
-                      /> */}
-
-                      {/* <CustomInput
-                        formControlProps={{
-                          fullWidth: true,
-                          className: classes.customFormControlClasses
-                        }}
-                        inputProps={{
-                          startAdornment: (
-                            <InputAdornment
-                              position="start"
-                              className={classes.inputAdornment}
-                            >
-                              <Face className={classes.inputAdornmentIcon} />
-                            </InputAdornment>
-                          ),
-                          placeholder: "Last Name..."
-                        }}
-                      /> */}
-
-                      {/* <CustomInput
-                        formControlProps={{
-                          fullWidth: true,
-                          className: classes.customFormControlClasses
-                        }}
-                        inputProps={{
-                          startAdornment: (
-                            <InputAdornment
-                              position="start"
-                              className={classes.inputAdornment}
-                            >
-                              <Email className={classes.inputAdornmentIcon} />
-                            </InputAdornment>
-                          ),
-                          placeholder: "Email..."
-                        }}
-                      /> */}
-
-                      {/* <CustomInput
-                        formControlProps={{
-                          fullWidth: true,
-                          className: classes.customFormControlClasses
-                        }}
-                        inputProps={{
-                          startAdornment: (
-                            <InputAdornment
-                              position="start"
-                              className={classes.inputAdornment}
-                            >
-                              <Icon className={classes.inputAdornmentIcon}>
-                                lock_outline
-                              </Icon>
-                            </InputAdornment>
-                          ),
-                          placeholder: "Password..."
-                        }}
-                      /> */}
-
                       <TextField
                         id="standard-text-input"
                         label="First Name"

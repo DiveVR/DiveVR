@@ -237,8 +237,8 @@ export default function Homepage() {
   );
 
   return (
-      <div className = "main">
-        <div className={classes.grow}>
+      <div className="bg">
+        {/* <div className={classes.grow}>
         <AppBar position="static" id="appbar">
             <Toolbar>
             <Typography className={classes.title} variant="h6" noWrap>
@@ -302,11 +302,11 @@ export default function Homepage() {
         
         {renderMobileMenu}
         {renderMenu}
-        </div>
+        </div> */}
         <div className = "titleView">
-            <label id="title">Experience the Game</label>
+            <label id="title">Experience VR</label>
             <br/>
-            <label id="subtitle">Houston Rockets vs Golden State Warriors</label>
+            <label id="subtitle">Spiderman Far From Home</label>
         </div>
         
         <div className={classes.root} id = "trending">
@@ -334,10 +334,3 @@ export default function Homepage() {
     </div>
   );
 }
-
-//ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
