@@ -4,11 +4,9 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import {EXPRESS_BACKEND} from '../../components/config/config.js';
 const util = require('util');
 
-const uploadURL = util.format('%s/upload', EXPRESS_BACKEND)
-console.log(uploadURL)
+const uploadURL = util.format('%s/upload', process.env.REACT_APP_EXPRESS_BACKEND)
 
 export default function Uploadpage() {
   return (

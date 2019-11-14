@@ -3,11 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "start": "node app.js"
-=======
-    "start": "PORT=3001 node ./bin/www"
->>>>>>> [DVR2-3] Add S3 to Project
   },
   "dependencies": {
     "aws-sdk": "^2.570.0",
