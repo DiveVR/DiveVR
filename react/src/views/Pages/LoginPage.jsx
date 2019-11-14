@@ -1,34 +1,14 @@
-/*!
-
-=========================================================
-
-=========================================================
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import PropTypes from "prop-types";
-import {login} from "../../components/firebase/firebaseAuth.js";
+import { login } from "../../components/firebase/firebaseAuth.js";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
-
-// @material-ui/icons
-import Face from "@material-ui/icons/Face";
-import Email from "@material-ui/icons/Email";
-// import LockOutline from "@material-ui/icons/LockOutline";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
@@ -116,36 +96,6 @@ class LoginPage extends React.Component {
                   </div>
                 </CardHeader>
                 <CardBody>
-                  {/* <CustomInput
-                    labelText="First Name.."
-                    id="firstname"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <Face className={classes.inputAdornmentIcon} />
-                        </InputAdornment>
-                      )
-                    }}
-                  /> */}
-                  {/* <CustomInput
-                    labelText="Email..."
-                    id="email"
-                    //inputProps="Kimleng"
-                    //onChange={this.updateInput}
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <Email className={classes.inputAdornmentIcon} />
-                        </InputAdornment>
-                      )
-                    }}
-                  /> */}
                   <TextField
                     id="standard-email-input"
                     label="Email"
@@ -168,24 +118,6 @@ class LoginPage extends React.Component {
                     autoComplete="current-password"
                     margin="normal"
                   />
-                  {/* <CustomInput
-                    labelText="Password"
-                    id="password"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <Icon className={classes.inputAdornmentIcon}>
-                            lock_outline
-                          </Icon>
-                        </InputAdornment>
-                      ),
-                      type: "password",
-                      autoComplete: "off"
-                    }} */}
-                  {/* /> */}
                 </CardBody>
                 <CardFooter className={classes.justifyContentCenter}>
                   <Button onClick= {this.handleLogin}  color="rose" simple size="lg" block>
