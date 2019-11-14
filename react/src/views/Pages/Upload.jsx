@@ -4,6 +4,11 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import {EXPRESS_BACKEND} from '../../components/config/config.js';
+const util = require('util');
+
+const uploadURL = util.format('%s/upload', EXPRESS_BACKEND)
+console.log(uploadURL)
 
 export default function Uploadpage() {
   return (
@@ -15,8 +20,10 @@ export default function Uploadpage() {
             {/* <IconButton aria-label="show 4 new mails" color="inherit" id="icon" size="medium">
                 <MailIcon />
             </IconButton> */}
-            <a href="https://www.google.com"><img id="upload_img" src={require('../../images/upload.png')} /></a>
-            <label id="upload_desc">Select files to upload</label>
+            <form id="uploadbanner" enctype="multipart/form-data" method="post" action={uploadURL}>
+              <input id="fileupload" name="file" type="file"/>
+              <input id="submit" type="submit" value="submit"/>
+            </form>
           </Typography>
         </Container>
       </React.Fragment>
