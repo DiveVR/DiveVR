@@ -6,7 +6,7 @@ var awsSDK = require('../aws_services/awsSDK.js');
 const util = require('util');
 
 router.get('/', function(req, res, next) {
-  res.render('upload', {username: req.query.user})
+  res.send('<p>Upload /GET function working</p>')
 })
 
 // The parameter 'file' is the name of the attribute in the html page
