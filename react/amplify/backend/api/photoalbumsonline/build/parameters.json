@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 0,
+    "AppSyncApiName": "photoalbumsonline",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authphotoalbumsonlinecb92aacb",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "photo-albums-online-cmpe-20191018224724-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/45577f844fca43d2d38ad5e53acfddf8f0c69061"
+}

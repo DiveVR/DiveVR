@@ -1,0 +1,21 @@
+{
+    "cmpe": {
+        "awscloudformation": {
+            "AuthRoleName": "photo-albums-online-cmpe-20191018224724-authRole",
+            "UnauthRoleArn": "arn:aws:iam::250387501934:role/photo-albums-online-cmpe-20191018224724-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::250387501934:role/photo-albums-online-cmpe-20191018224724-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "photo-albums-online-cmpe-20191018224724-deployment",
+            "UnauthRoleName": "photo-albums-online-cmpe-20191018224724-unauthRole",
+            "StackName": "photo-albums-online-cmpe-20191018224724",
+            "StackId": "arn:aws:cloudformation:us-east-1:250387501934:stack/photo-albums-online-cmpe-20191018224724/eb01d310-f233-11e9-aa3a-12f2c8f206e2"
+        },
+        "categories": {
+            "auth": {
+                "photoalbumsonlinecb92aacb": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"443263989626870\",\"client_secret\":\"348f61ca33d573e8a9aeec3443f20f3a\"},{\"ProviderName\":\"Google\",\"client_id\":\"1067010106041-kvq3d154q005qbn93k5ir5b9si3htpkp.apps.googleusercontent.com\",\"client_secret\":\"mMiBr8RHlIhB5p5s_r7f8dK-\"}]"
+                }
+            }
+        }
+    }
+}

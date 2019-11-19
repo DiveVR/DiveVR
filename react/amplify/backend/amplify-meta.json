@@ -1,0 +1,83 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "photo-albums-online-cmpe-20191018224724-authRole",
+            "UnauthRoleArn": "arn:aws:iam::250387501934:role/photo-albums-online-cmpe-20191018224724-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::250387501934:role/photo-albums-online-cmpe-20191018224724-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "photo-albums-online-cmpe-20191018224724-deployment",
+            "UnauthRoleName": "photo-albums-online-cmpe-20191018224724-unauthRole",
+            "StackName": "photo-albums-online-cmpe-20191018224724",
+            "StackId": "arn:aws:cloudformation:us-east-1:250387501934:stack/photo-albums-online-cmpe-20191018224724/eb01d310-f233-11e9-aa3a-12f2c8f206e2"
+        },
+        "categories": {
+            "auth": {
+                "photoalbumsonlinecb92aacb": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"443263989626870\",\"client_secret\":\"348f61ca33d573e8a9aeec3443f20f3a\"},{\"ProviderName\":\"Google\",\"client_id\":\"1067010106041-kvq3d154q005qbn93k5ir5b9si3htpkp.apps.googleusercontent.com\",\"client_secret\":\"mMiBr8RHlIhB5p5s_r7f8dK-\"}]"
+                }
+            }
+        }
+    },
+    "auth": {
+        "photoalbumsonlinecb92aacb": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [],
+            "output": {
+                "AppClientSecret": "3qquue7m0qhrsmvfcfikdcu06hdurqn68cabvo2b3kkgj9qkt93",
+                "UserPoolId": "us-east-1_KuV2yWZ9N",
+                "AppClientIDWeb": "22n4bp6lvkdk9233sdu2ad80fp",
+                "AppClientID": "5smkgv24lv7lcm184n21remtot",
+                "HostedUIDomain": "myphotosalbumonline-cmpe",
+                "IdentityPoolId": "us-east-1:dd2c7283-d82e-46ac-961c-78eb16692454",
+                "IdentityPoolName": "photoalbumsonlinecb92aacb_identitypool_cb92aacb__cmpe",
+                "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+                "UserPoolName": "photoalbumsonlinecb92aacb_userpool_cb92aacb"
+            },
+            "lastPushTimeStamp": "2019-11-13T08:43:08.960Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/photo-albums-online-cmpe-20191018224724-deployment/amplify-cfn-templates/auth/photoalbumsonlinecb92aacb-cloudformation-template.yml",
+                "logicalId": "authphotoalbumsonlinecb92aacb"
+            }
+        }
+    },
+    "api": {
+        "photoalbumsonline": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [],
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                        "userPoolConfig": {
+                            "userPoolId": "authphotoalbumsonlinecb92aacb"
+                        }
+                    }
+                },
+                "GraphQLAPIIdOutput": "nfajzhqmrbaivbwdeomntxof7m",
+                "GraphQLAPIEndpointOutput": "https://mqsod5del5d2dayroc7a37n7ma.appsync-api.us-east-1.amazonaws.com/graphql"
+            },
+            "lastPushTimeStamp": "2019-11-13T08:43:08.962Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/photo-albums-online-cmpe-20191018224724-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+                "logicalId": "apiphotoalbumsonline"
+            }
+        }
+    },
+    "storage": {
+        "photoalbumsonline": {
+            "service": "S3",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "BucketName": "photo-albums-online-cmpe",
+                "Region": "us-east-1"
+            },
+            "lastPushTimeStamp": "2019-11-13T08:43:08.963Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/photo-albums-online-cmpe-20191018224724-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+                "logicalId": "storagephotoalbumsonline"
+            }
+        }
+    }
+}

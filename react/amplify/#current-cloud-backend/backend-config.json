@@ -1,0 +1,32 @@
+{
+	"auth": {
+		"photoalbumsonlinecb92aacb": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"photoalbumsonline": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authphotoalbumsonlinecb92aacb"
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"photoalbumsonline": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+    "cmpe": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "admin"
+    }
+}
