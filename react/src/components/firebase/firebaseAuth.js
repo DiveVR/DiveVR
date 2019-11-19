@@ -15,3 +15,11 @@ export function signUp(firstName, lastName, email, password) {
       updateName(firstName, lastName, fire.auth().currentUser.uid)
     });
 }
+
+export function getUID() {
+  return new Promise(resolve => {
+    fire.auth().onAuthStateChanged(user => {
+      resolve(user)
+    })
+  })
+}

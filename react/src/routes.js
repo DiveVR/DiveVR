@@ -8,7 +8,7 @@ import Homepage from "views/Pages/index"
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Image from "@material-ui/icons/Image";
-import Uploadpage from "views/Pages/Upload";
+import UploadPage from "views/Pages/Upload";
 
 var dashRoutes = [
   {
@@ -40,7 +40,7 @@ var dashRoutes = [
         rtlName: "صفحة الخطأ",
         mini: "U",
         rtlMini: "البريد",
-        component: Uploadpage,
+        component: UploadPage,
         layout: "/admin"
       },
       {
