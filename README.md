@@ -1,14 +1,15 @@
 # DiveVR
 
 ### University Name: [San Jose State University](http://www.sjsu.edu/)
-### Course: [Enterprise Software](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE172.html)
-### Professor: [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)
+### Course: Senior Project II (CMPE195B/F) / [Enterprise Software (CMPE172)](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE172.html)
+### Professor: Rod Fatoohi / [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)
+### Advisor: Fabio Di Troia
 
 ### Students:
-#### [Abraham Tesfay](https://www.linkedin.com/in/abraham-tesfay/)
-#### [Dominic Pham](https://www.linkedin.com/in/dominic-pham-849638153/)
-#### [Cheng Chin Lim](https://www.linkedin.com/in/cheng-chin-lim/)
-#### [Dung Anh Nguyen](https://www.linkedin.com/in/daniel-nguyen-417162156/)
+1. #### [Abraham Tesfay](https://www.linkedin.com/in/abraham-tesfay/)
+2. #### [Dominic Pham](https://www.linkedin.com/in/dominic-pham-849638153/)
+3. #### [Cheng Chin Lim](https://www.linkedin.com/in/cheng-chin-lim/)
+4. #### [Dung Anh Nguyen](https://www.linkedin.com/in/daniel-nguyen-417162156/)
 
 ## Table of Contents (By Cheng Chin Lim)
 
