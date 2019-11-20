@@ -22,7 +22,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import AuthLayout from "layouts/Auth.jsx";
 import RtlLayout from "layouts/RTL.jsx";
 import AdminLayout from "layouts/Admin.jsx";
-import Homepage from "views/Pages/index"
+import Homepage from "views/Pages/HomePage"
 import UploadPage from "views/Pages/Upload"
 import UserProfile from "views/Pages/UserProfile";
 

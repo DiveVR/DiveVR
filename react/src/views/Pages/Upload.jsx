@@ -29,12 +29,13 @@ class UploadPage extends React.Component {
         <React.Fragment>
         <CssBaseline />
           <Container fixed>
-            <Typography component="div" style={{ backgroundColor: 'white', height: '60vh' }} id="container">
+            <Typography component="div" style={{ backgroundColor: 'white', height: '10vh', width: '50vh', paddingLeft: '5vh', paddingTop: '3vh' }} id="container">
               {/* <IconButton aria-label="show 4 new mails" color="inherit" id="icon" size="medium">
                   <MailIcon />
               </IconButton> */}
               <form id="uploadbanner" enctype="multipart/form-data" method="post" action={this.state.uploadURL}>
-                <input id="fileupload" name="file" type="file"/>
+                {/* <label for="file-upload" class="custom-file-upload">Upload</label> */}
+                <input id="file-upload" name="file" type="file" />
                 <input id="submit" type="submit" value="submit"/>
               </form>
             </Typography>

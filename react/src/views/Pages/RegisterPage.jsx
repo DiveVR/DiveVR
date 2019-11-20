@@ -93,7 +93,7 @@ class RegisterPage extends React.Component {
               <h2 className={classes.cardTitle}>DiveVR Registration</h2>
               <CardBody>
                 <GridContainer justify="center">
-                  <GridItem xs={12} sm={12} md={5}>
+                  {/* <GridItem xs={12} sm={12} md={5}>
                     <InfoArea
                       title="Dive VR registration"
                       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, seagna aliqua. Ut enim ad minim v"
@@ -112,7 +112,7 @@ class RegisterPage extends React.Component {
                       icon={Group}
                       iconColor="info"
                     />
-                  </GridItem>
+                  </GridItem> */}
                   <GridItem xs={12} sm={8} md={5}>
                     <div className={classes.center}>
                       <Button justIcon round color="twitter">
