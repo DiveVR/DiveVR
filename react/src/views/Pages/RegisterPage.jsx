@@ -25,6 +25,8 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 
 import registerPageStyle from "assets/jss/material-dashboard-pro-react/views/registerPageStyle";
+import {getUID} from '../../components/firebase/firebaseAuth.js'
+const util = require('util');
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -73,7 +75,22 @@ class RegisterPage extends React.Component {
   handleSignup = () => {
     signUp(this.state.firstName, this.state.lastName, this.state.email, this.state.password).then(() => {
       // Handle successful signup here
-      this.redirectToLogin()
+      getUID().then(user => {
+        fetch(util.format('%s/signup', process.env.REACT_APP_EXPRESS_BACKEND), {
+          method: "POST",
+          headers: {
+              'Content-type': 'application/json'
+          },
+          body: JSON.stringify({uid: user.uid, firstName: this.state.firstName, lastName: this.state.lastName})
+        })
+        .then(result => {
+          console.log(result) // 401 = Unauthorized; 200 = OK
+          if (result.ok) {
+              return 
+          }
+        })
+        this.redirectToLogin()
+      })
     }).catch(err => {
       // Handle unsuccessful signup here
     })

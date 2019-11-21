@@ -19,7 +19,7 @@ class UploadPage extends React.Component {
 
   componentDidMount() {
     getUID().then(user => {
-      this.setState({uploadURL: util.format('%s/upload?%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid)})
+      this.setState({uploadURL: util.format('%s/upload?uid=%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid)})
     })
   }
 
