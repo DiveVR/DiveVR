@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> updated 4 minutes ago
+                  <AccessTime /> posted 37 minutes ago
                 </div>
               </CardFooter>
             </Card>
@@ -124,7 +124,7 @@ class Dashboard extends React.Component {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                  <AccessTime /> posted 2 hours ago
                 </div>
               </CardFooter>
             </Card>
@@ -166,7 +166,7 @@ class Dashboard extends React.Component {
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                  <AccessTime /> posted 5 days ago
                 </div>
               </CardFooter>
             </Card>
@@ -224,12 +224,9 @@ class Dashboard extends React.Component {
                 VR Video Description
                 </p>
               </CardBody>
-              <CardFooter product>
-                <div className={classes.price}>
-                  <h4>$899/night</h4>
-                </div>
-                <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place /> Barcelona, Spain
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> posted 20 minutes ago
                 </div>
               </CardFooter>
             </Card>
@@ -283,12 +280,9 @@ class Dashboard extends React.Component {
                   VR Video Description
                 </p>
               </CardBody>
-              <CardFooter product>
-                <div className={classes.price}>
-                  <h4>$1.119/night</h4>
-                </div>
-                <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place /> London, UK
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> posted 1 hour ago
                 </div>
               </CardFooter>
             </Card>
@@ -342,12 +336,9 @@ class Dashboard extends React.Component {
                   VR Video Description
                 </p>
               </CardBody>
-              <CardFooter product>
-                <div className={classes.price}>
-                  <h4>$459/night</h4>
-                </div>
-                <div className={`${classes.stats} ${classes.productStats}`}>
-                  <Place /> Milan, Italy
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> posted 3 hours ago
                 </div>
               </CardFooter>
             </Card>

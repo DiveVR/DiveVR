@@ -22,8 +22,8 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import AuthLayout from "layouts/Auth.jsx";
 import RtlLayout from "layouts/RTL.jsx";
 import AdminLayout from "layouts/Admin.jsx";
-import Homepage from "views/Pages/index"
-import Uploadpage from "views/Pages/Upload"
+import Homepage from "views/Pages/HomePage"
+import UploadPage from "views/Pages/Upload"
 import UserProfile from "views/Pages/UserProfile";
 
 import "assets/scss/material-dashboard-pro-react.scss?v=1.7.0";
@@ -41,7 +41,7 @@ ReactDOM.render(
       <Route path="/admin" component={AdminLayout} />
       <Route path="/home-page" component={Homepage} />
       <Route path="/user-profile" component={UserProfile} />
-      <Route path="/upload-page" component={Uploadpage} />
+      <Route path="/upload-page" component={UploadPage} />
       <Route path="/register-page" component={RegisterPage} />
       <Route path="/login-page" component={LoginPage} />
       <Redirect from="/" to="/auth/login-page" />
