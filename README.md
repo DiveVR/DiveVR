@@ -1,9 +1,8 @@
 # DiveVR
 
 ### University Name: [San Jose State University](http://www.sjsu.edu/)
-### Course: Senior Project II (CMPE195B/F) / [Enterprise Software (CMPE172)](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE172.html)
-### Professor: Rod Fatoohi / [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)
-### Advisor: Fabio Di Troia
+### Course: [Enterprise Software (CMPE172)](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE172.html)
+### Professor: [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)
 
 ### Students:
 1. #### [Abraham Tesfay](https://www.linkedin.com/in/abraham-tesfay/)
@@ -14,6 +13,7 @@
 ## Table of Contents (By Cheng Chin Lim)
 
 * ### [Project Introduction](#intro)
+* ### [Features List](#features)
 * ### [Demo Screenshots](#demo)
 * ### [Pre-requisites Set Up](#prereq)
 * ### [How to set up and run project locally](#setuplocal)
@@ -27,9 +27,74 @@ The second component of our product is to design Oculus app that runs on the Ocu
  
 At the end of our project we are hoping to provide a dynamic Virtual Reality platform packed with variety of VR content and experience. Since VR/AR industry is bound to grow exponentially for the next five years, we also hope to tap into this billion-dollar industry and be early adopters. 
 
+<a name="features" />
+
+## Features List (By Dominic Pham)
+
+#### 1. Sign up
+#### 2. Login
+#### 3. Upload video
+#### 4. Play video
+#### 5. Show personal videos list
+#### 6. AWS Cloudwatch
+#### 7. AWS SNS
+#### 8. AWS Polly
+#### 9. AWS Cross replication
+
+
 <a name="demo" />
 
-## Demo Screenshots 
+## Demo Screenshots (By Cheng Chin Lim)
+
+### Register:
+![Register](https://drive.google.com/uc?export=view&id=1CqE_-pHTFEuBTKkEPNe5Fxzl0JFn4m4D)
+
+### Login:
+![Login](https://drive.google.com/uc?export=view&id=1tEwSRcNoX_YBst-m5C9bfBsvyaHDWe3e)
+
+### Home page:
+![HomePage](https://drive.google.com/uc?export=view&id=1DQ0J9r1rOufAfXqVq6s-b4uncsGFS4HF)
+
+### Dashboard:
+![Dashboard](https://drive.google.com/uc?export=view&id=1zgBnmS-dkswY-WYtTaBgdgyj3lNA0o-Z)
+
+### Upload page:
+![UploadPage](https://drive.google.com/uc?export=view&id=1XGX0BOsNUM-n2OPhQlW4p9byCvo5cozk)
+
+### Uploading:
+![Uploading](https://drive.google.com/uc?export=view&id=1R5xBRxg-wafW0NrILF8xDTRnzKck3V3-)
+
+### VR Player:
+![VRplayer](https://drive.google.com/uc?export=view&id=1QayiCmOf_vu0WTSIj1WlypC1OmxVkVdK)
+
+### VR Player Full Screen:
+![VRplayerFullScreen](https://drive.google.com/uc?export=view&id=1mOIYDdEg2yEMuOUJVg3pHLs6xPfYy1Yr)
+
+### Edit Profile page:
+![EditProfile](https://drive.google.com/uc?export=view&id=16crD9S7f4Vvcl9bR-02zi5qr03NucAXw)
+
+## AWS Demo (By Dung Anh Nguyen)
+
+### S3 event:
+![S3event](https://drive.google.com/uc?export=view&id=1YnVTJwhBhD8OdNBGLK2LEcOrnX54kDVM)
+
+### Cloudwatch:
+![Cloudwatch](https://drive.google.com/uc?export=view&id=1uFxnHuWbYdDA0DLAOoa5mcyUIFoTvXP8)
+
+### SNS:
+![SNS](https://drive.google.com/uc?export=view&id=1QYI-UbB3QYWksEhKGjZ0YKXcX_dyDfGy)
+
+### SQS:
+![SQS](https://drive.google.com/uc?export=view&id=1sZFs9M6wc2Q06aUmOButML4R2Cw3mm6N)
+
+### Cognito:
+![Cognito](https://drive.google.com/uc?export=view&id=1r-SbcB1T3hRKJ0tDZjg48YQGLtxhK__t)
+
+### Lambda:
+![Lambda](https://drive.google.com/uc?export=view&id=1vkKRz671LXfrt7mougFOVwPnsLXmPecz)
+
+### Amplify:
+![Amplify](https://drive.google.com/uc?export=view&id=1jdNXMZjvCqxbpsXQCkxQhsAeIXH3ikgf)
 
 
 <a name="prereq" />
