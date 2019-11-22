@@ -58,11 +58,11 @@ class LoginPage extends React.Component {
       .catch(error => {
         // Handle failed login here
         // console.log("Log in failed !!!")
-          this.setState(
-            {
-              open_loginFail: true,
-            }
-          )
+          // this.setState(
+          //   {
+          //     open_loginFail: true,
+          //   }
+          // )
 
       })
   }
@@ -71,9 +71,9 @@ class LoginPage extends React.Component {
     this.props.history.push(`/admin/homepage`)
   }
 
-  showWrongMessage = () => {
+  // showWrongMessage = () => {
 
-  }
+  // }
 
   updateEmail = e => {
     this.state.email = e.target.value

@@ -156,7 +156,6 @@ class UploadPage extends React.Component {
                           className={"VRTitle"}
                           label="Type Your VR Title"
                           margin="normal"
-                          value = {this.state.vrtitle}
                           onChange = {this.updateVRTitle}
                         />
                       </div>
@@ -220,14 +219,14 @@ class UploadPage extends React.Component {
               </IconButton> */}
               <Typography variant="h5" component="h3">
                 Upload VR Video
-            </Typography>
+              </Typography>
               <form id="uploadbanner" enctype="multipart/form-data" method="post" action={this.state.uploadURL}>
                 {/* <label for="file-upload" class="custom-file-upload">Upload</label> */}
                 <input id="file-upload" name="file" type="file" />
                 <input id="submit" type="submit" value="submit"/>
-                <Button onClick={this.handleLogin} color="rose" simple size="lg" block>
+                {/* <Button onClick={this.handleLogin} color="rose" simple size="lg" block>
                   Upload Video
-                </Button>
+                </Button> */}
               </form>
             </Typography>
           </Container>
