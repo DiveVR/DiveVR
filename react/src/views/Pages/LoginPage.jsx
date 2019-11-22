@@ -148,8 +148,8 @@ class LoginPage extends React.Component {
                         {open_loginFail: false}
                       )}
                   />
-                <Button onClick={this.handleLogin} color="rose" simple size="lg" block>
-                  Let{"'"}s Dive
+                   <Button onClick={this.handleLogin} color="rose" simple size="lg" block>
+                     Let{"'"}s Dive
                   </Button>
                 </CardFooter>
               </Card>
