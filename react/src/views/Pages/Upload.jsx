@@ -62,11 +62,11 @@ class UploadPage extends React.Component {
     super(props);
 
     this.state = {
-      uploadURL: "",
+      uid: "",
       checked: [24, 22],
       selectedValue: null,
       selectedEnabled: "b",
-      vrtitle:""
+      vrTitle:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeEnabled = this.handleChangeEnabled.bind(this);
@@ -97,18 +97,33 @@ class UploadPage extends React.Component {
   updateVRTitle = e => {
     this.setState(
       {
-        vrtitle: e.target.value
+        vrTitle: e.target.value
       })
   }
 
-  uploadVRVideo =()=>{
-      console.log("Upload the video")
-      console.log("Upload Video Name is: " + this.state.vrtitle)
+  uploadVRVideo = () => {
+    const fileInput = document.getElementById('file-upload')
+    const formData = new FormData()
+
+    formData.append('file', fileInput.files[0])
+    formData.append('videoTitle', this.state.vrTitle)
+    formData.append('uid', this.state.uid)
+
+    fetch(util.format('%s/upload', process.env.REACT_APP_EXPRESS_BACKEND), {
+      method: "POST",
+      body: formData
+    })
+    .then(result => {
+      console.log(result) // 401 = Unauthorized; 200 = OK
+      if (result.ok) {
+          return 
+      }
+    })
   }
 
   componentDidMount() {
     getUID().then(user => {
-      this.setState({uploadURL: util.format('%s/upload?uid=%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid)})
+      this.setState({uid: user.uid})
     })
   }
 
@@ -178,9 +193,9 @@ class UploadPage extends React.Component {
                       <Button color="rose" onClick={() => {
                         document.getElementById('submit-vr-video').click()
                       }}>Submit VR Video
-                        <input id="submit-vr-video" type="submit" 
+                        <input id="submit-vr-video" type="button" 
                         onClick={this.uploadVRVideo}
-                        value="submit" hidden />
+                        hidden />
                       </Button>
                     </form>
                   </CardBody>
@@ -208,25 +223,6 @@ class UploadPage extends React.Component {
               </GridItem> */}
 
               </GridContainer>
-            
-
-
-            <Typography component="div" style={{ backgroundColor: 'white', height: '40vh', width: '60vh', paddingLeft: '5vh', paddingTop: '3vh' }} id="container">
-              {/* <IconButton aria-label="show 4 new mails" color="inherit" id="icon" size="medium">
-                  <MailIcon />
-              </IconButton> */}
-              <Typography variant="h5" component="h3">
-                Upload VR Video
-              </Typography>
-              <form id="uploadbanner" enctype="multipart/form-data" method="post" action={this.state.uploadURL}>
-                {/* <label for="file-upload" class="custom-file-upload">Upload</label> */}
-                <input id="file-upload" name="file" type="file" />
-                <input id="submit" type="submit" value="submit"/>
-                {/* <Button onClick={this.handleLogin} color="rose" simple size="lg" block>
-                  Upload Video
-                </Button> */}
-              </form>
-            </Typography>
           </Container>
         </React.Fragment>
       </div>

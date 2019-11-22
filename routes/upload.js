@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 // The parameter 'file' is the name of the attribute in the html page
 router.post('/', awsS3.upload.array('file', 1), function(req, res, next) {
-  ddb.addVideo(req.query.uid, util.format('%s/%s', process.env.CLOUDFRONT_PREFIX_URL, req.files[0].key), req.files[0].key)
+  ddb.addVideo(req.body.uid, util.format('%s/%s', process.env.CLOUDFRONT_PREFIX_URL, req.files[0].key), req.body.videoTitle)
   res.sendStatus(200)
 })
 
