@@ -2,11 +2,13 @@ var AWS = require('./awsSDK');
 
 var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
-function createUserEntry(uuid) {
+function createUserEntry(uuid, firstName, lastName) {
     const params = {
         TableName: process.env.DYNAMO_TABLE_NAME,
         Item: {
             'user_id' : {S: uuid},
+            'first_name': {S: firstName},
+            'last_name': {S: lastName},
             'videos' : {
                 L : []
             }
@@ -23,12 +25,12 @@ function createUserEntry(uuid) {
     })
 }
 
-function addVideo(uuid, url, videoTitle) {
+function addVideo(uid, url, videoTitle) {
     const params = {
         TableName: process.env.DYNAMO_TABLE_NAME,
         Key: {
             "user_id" : {
-                S: uuid
+                S: uid
             }
         },
 

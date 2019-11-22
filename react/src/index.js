@@ -30,7 +30,6 @@ import "assets/scss/material-dashboard-pro-react.scss?v=1.7.0";
 import RegisterPage from "views/Pages/RegisterPage";
 import LoginPage from "views/Pages/LoginPage";
 
-
 const hist = createBrowserHistory();
 
 ReactDOM.render(
