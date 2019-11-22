@@ -61,9 +61,6 @@ At the end of our project we are hoping to provide a dynamic Virtual Reality pla
 ### Upload page:
 ![UploadPage](https://drive.google.com/uc?export=view&id=1XGX0BOsNUM-n2OPhQlW4p9byCvo5cozk)
 
-### Uploading:
-![Uploading](https://drive.google.com/uc?export=view&id=1R5xBRxg-wafW0NrILF8xDTRnzKck3V3-)
-
 ### VR Player:
 ![VRplayer](https://drive.google.com/uc?export=view&id=1QayiCmOf_vu0WTSIj1WlypC1OmxVkVdK)
 
