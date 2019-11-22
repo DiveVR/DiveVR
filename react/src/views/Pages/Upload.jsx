@@ -3,51 +3,26 @@ import React from 'react';
 import PropTypes from "prop-types";
 import TextField from '@material-ui/core/TextField';
 
-// react component plugin for creating a beautiful datetime dropdown picker
-import Datetime from "react-datetime";
-// react component plugin for creating beatiful tags on an input
-import TagsInput from "react-tagsinput";
-// plugin that creates slider
-import nouislider from "nouislider";
-
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import InputLabel from "@material-ui/core/InputLabel";
-import Switch from "@material-ui/core/Switch";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
 
 // @material-ui/icons
-import Today from "@material-ui/icons/Today";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import AvTimer from "@material-ui/icons/AvTimer";
-// @material-ui/icons
 import MailOutline from "@material-ui/icons/MailOutline";
-import Check from "@material-ui/icons/Check";
-import Clear from "@material-ui/icons/Clear";
-import Contacts from "@material-ui/icons/Contacts";
-import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 // import Button from "components/CustomButtons/Button.jsx";
+
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-import CustomLinearProgress from "components/CustomLinearProgress/CustomLinearProgress.jsx";
-import ImageUpload from "components/CustomUpload/ImageUpload.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
-import CardText from "components/Card/CardText.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
-import CustomInput from "components/CustomInput/CustomInput.jsx";
+
 
 //
 import regularFormsStyle from "assets/jss/material-dashboard-pro-react/views/regularFormsStyle";

@@ -30,7 +30,7 @@ var dashRoutes = [
   },
   {
     path: "/myVideo",
-    name: "My Video",
+    name: "My Videos",
     rtlName: "لوحة القيادة",
     icon: DashboardIcon,
     component: MyVideo,
