@@ -12,6 +12,9 @@ var upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: config.S3_BUCKET_NAME,
+        contentType: function(req, file, cb) {
+            cb(null, "video/mp4")
+        },
         metadata: function (req, file, cb) {
             cb(null, {fieldName: file.fieldname});
         },

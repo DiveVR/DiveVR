@@ -76,15 +76,12 @@ function getVideos(uid) {
             if (err) {
                 return reject(err)
             }
-            var vids =[]
-            var vid = {
-                url: "",
-                videoTitle: ""
-            }
-
+            var vids = []
             for (let video of data.Item.videos.L) {
-                vid.url = video.M.url.S
-                vid.videoTitle = video.M.video_title.S
+                var vid = {
+                    url: video.M.url.S,
+                    videoTitle: video.M.video_title.S
+                }
                 vids.push(vid)
             }
             resolve(vids)
