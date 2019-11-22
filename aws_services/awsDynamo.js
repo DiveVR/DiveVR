@@ -58,8 +58,38 @@ function addVideo(uid, url, videoTitle) {
             resolve(data)
         })
     })
-
-    
 }
 
-module.exports = {createUserEntry, addVideo}
+function getVideos(uid) {
+    const params = {
+        TableName: process.env.DYNAMO_TABLE_NAME,
+        Key: {
+            "user_id" : {
+                S: uid
+            }
+        },
+        ProjectionExpression: 'videos'
+    }
+
+    return new Promise((resolve, reject) => {
+        ddb.getItem(params, (err, data) => {
+            if (err) {
+                return reject(err)
+            }
+            var vids =[]
+            var vid = {
+                url: "",
+                videoTitle: ""
+            }
+
+            for (let video of data.Item.videos.L) {
+                vid.url = video.M.url.S
+                vid.videoTitle = video.M.video_title.S
+                vids.push(vid)
+            }
+            resolve(vids)
+        })
+    })
+}
+
+module.exports = {createUserEntry, addVideo, getVideos}
