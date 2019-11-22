@@ -3,7 +3,8 @@ import Dashboard from "views/Dashboard/Dashboard.jsx";
 import LoginPage from "views/Pages/LoginPage.jsx";
 import RegisterPage from "views/Pages/RegisterPage.jsx";
 import UserProfile from "views/Pages/UserProfile.jsx";
-import Homepage from "views/Pages/HomePage"
+import Homepage from "views/Pages/HomePage";
+import MyVideo from "views/Pages/MyVideoPage";
 
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
@@ -25,6 +26,14 @@ var dashRoutes = [
     rtlName: "لوحة القيادة",
     icon: DashboardIcon,
     component: Dashboard,
+    layout: "/admin"
+  },
+  {
+    path: "/myVideo",
+    name: "My Video",
+    rtlName: "لوحة القيادة",
+    icon: DashboardIcon,
+    component: MyVideo,
     layout: "/admin"
   },
   {
@@ -60,5 +69,6 @@ var dashRoutes = [
       }
     ]
   }
+  
 ];
 export default dashRoutes;
