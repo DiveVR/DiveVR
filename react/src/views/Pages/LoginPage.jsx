@@ -14,8 +14,11 @@ import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import Snackbar from '@material-ui/core/Snackbar';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
 
 import loginPageStyle from "assets/jss/material-dashboard-pro-react/views/loginPageStyle.jsx";
+import SweetAlert from "react-bootstrap-sweetalert/lib/dist/SweetAlert";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -24,13 +27,13 @@ class LoginPage extends React.Component {
     this.state = {
       cardAnimaton: "cardHidden",
       email: "",
-      password: ""
-    };
+      password: "",
+      open_loginFail: false };
   }
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
     this.timeOutFunction = setTimeout(
-      function() {
+      function () {
         this.setState({ cardAnimaton: "" });
       }.bind(this),
       700
@@ -42,18 +45,35 @@ class LoginPage extends React.Component {
   }
 
   handleLogin = () => {
+    // this.setState(
+    //   {
+    //     open_loginFail: true,
+    //   }
+    // )
     login(this.state.email, this.state.password).then(() => {
       // Handle successful login here
+      console.log("I am checking log in")
       this.redirectToHomepage()
     })
-    .catch(error => {
-      // Handle failed login here
-    })
+      .catch(error => {
+        // Handle failed login here
+        console.log("Log in failed !!!")
+          this.setState(
+            {
+              open_loginFail: true,
+            }
+          )
+
+      })
   }
 
   redirectToHomepage = () => {
     this.props.history.push(`/admin/homepage`)
   }
+
+  // showWrongMessage = () => {
+
+  // }
 
   updateEmail = e => {
     this.state.email = e.target.value
@@ -120,15 +140,23 @@ class LoginPage extends React.Component {
                   />
                 </CardBody>
                 <CardFooter className={classes.justifyContentCenter}>
-                  <Button onClick= {this.handleLogin}  color="rose" simple size="lg" block>
-                    Let{"'"}s Dive
+                  <SweetAlert
+                      show = {this.state.open_loginFail}
+                      title = "Log in Failed"
+                      text = "Wrong Password "
+                      onConfirm = {()=> this.setState(
+                        {open_loginFail: false}
+                      )}
+                  />
+                   <Button onClick={this.handleLogin} color="rose" simple size="lg" block>
+                     Let{"'"}s Dive
                   </Button>
                 </CardFooter>
               </Card>
             </form>
           </GridItem>
         </GridContainer>
-      </div>
+      </div >
     );
   }
 }
