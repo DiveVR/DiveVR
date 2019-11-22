@@ -189,7 +189,7 @@ class UploadPage extends React.Component {
                   </CardBody>
                 </Card>
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
+              {/* <GridItem xs={12} sm={12} md={4}>
                 <Card>
                   <CardHeader color="rose" icon>
                     <CardIcon color="rose">
@@ -208,7 +208,7 @@ class UploadPage extends React.Component {
                     </FormControl>
                   </CardBody>
                 </Card>
-              </GridItem>
+              </GridItem> */}
 
               </GridContainer>
             
