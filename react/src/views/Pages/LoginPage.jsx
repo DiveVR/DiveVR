@@ -57,12 +57,12 @@ class LoginPage extends React.Component {
     })
       .catch(error => {
         // Handle failed login here
-        // console.log("Log in failed !!!")
-          // this.setState(
-          //   {
-          //     open_loginFail: true,
-          //   }
-          // )
+        console.log("Log in failed !!!")
+          this.setState(
+            {
+              open_loginFail: true,
+            }
+          )
 
       })
   }

@@ -101,8 +101,7 @@ class UploadPage extends React.Component {
       })
   }
 
-  uploadVRVideo()
-  {
+  uploadVRVideo =()=>{
       console.log("Upload the video")
       console.log("Upload Video Name is: " + this.state.vrtitle)
   }
