@@ -60,19 +60,19 @@ class MyVideoPage extends React.Component {
                 },
                 {
                     videoTitle: "Example 2",
-                    videoURL: "www.google.com",
+                    videoURL: "http://www.google.com",
                 },
                 {
                     videoTitle: "Example 3",
-                    videoURL: "www.google.com",
+                    videoURL: "http://www.google.com",
                 },
                 {
                     videoTitle: "Example 4",
-                    videoURL: "www.google.com",
+                    videoURL: "http://www.google.com",
                 },
                 {
                     videoTitle: "Example 5",
-                    videoURL: "www.google.com",
+                    videoURL: "http://www.google.com",
                 },
             ],
             // videoTitle, videoURL

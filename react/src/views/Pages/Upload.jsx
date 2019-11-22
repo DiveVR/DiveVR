@@ -97,9 +97,8 @@ class UploadPage extends React.Component {
   updateVRTitle = e => {
     this.setState(
       {
-        vrtitle: e.value
-      }
-    )
+        vrtitle: e.target.value
+      })
   }
 
   uploadVRVideo()
