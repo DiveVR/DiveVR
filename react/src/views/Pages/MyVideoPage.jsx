@@ -6,6 +6,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import {getUID} from '../../components/firebase/firebaseAuth.js'
+const util = require('util');
 
 
 function createData(name, calories, fat, carbs, protein) {
@@ -53,33 +55,27 @@ class MyVideoPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            videos: [
-                {
-                    videoTitle: "Example 1",
-                    videoURL : "http://www.google.com",
-                },
-                {
-                    videoTitle: "Example 2",
-                    videoURL: "http://www.google.com",
-                },
-                {
-                    videoTitle: "Example 3",
-                    videoURL: "http://www.google.com",
-                },
-                {
-                    videoTitle: "Example 4",
-                    videoURL: "http://www.google.com",
-                },
-                {
-                    videoTitle: "Example 5",
-                    videoURL: "http://www.google.com",
-                },
-            ],
-            // videoTitle, videoURL
+            videos: [],
         };
     }
     componentDidMount() {
-       
+        getUID().then(user => {
+            fetch(util.format('%s/videos?uid=%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid), {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json",
+                    'Content-Type': 'application/json'
+                }
+              })
+              .then(response => {
+                return response.json() // 401 = Unauthorized; 200 = OK
+              })
+              .then(responseData => {
+                this.setState({videos: responseData})
+                console.log(this.state.videos)
+                return responseData
+              })
+        })
     }
 
     render() {
@@ -88,7 +84,7 @@ class MyVideoPage extends React.Component {
                 <Table className={"classes.table"} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell>Video Title</StyledTableCell>
+                            <StyledTableCell>Videos</StyledTableCell>
                             <StyledTableCell></StyledTableCell>
                             <StyledTableCell></StyledTableCell>
                             <StyledTableCell></StyledTableCell>
@@ -96,17 +92,17 @@ class MyVideoPage extends React.Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {this.state.videos.map(video => (
+                        {this.state.videos.length > 0 ? this.state.videos.map(video => (
                             <StyledTableRow key={video.videoTitle}>
                                 <StyledTableCell component="th" scope="row">
-                                    {<a href={video.videoURL}>{video.videoTitle}</a>}
+                                    {<a href={video.url}>{video.videoTitle}</a>}
                                 </StyledTableCell>
                                 <StyledTableCell align="right"></StyledTableCell>
                                 <StyledTableCell align="right"></StyledTableCell>
                                 <StyledTableCell align="right"></StyledTableCell>
                                 <StyledTableCell align="right"></StyledTableCell>
                             </StyledTableRow>
-                        ))}
+                        )) : <h2>Loading...</h2>}
                     </TableBody>
                 </Table>
             </Paper>
