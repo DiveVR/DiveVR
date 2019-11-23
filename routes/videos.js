@@ -7,6 +7,8 @@ const util = require('util');
 router.get('/', function(req, res, next) {
   dynamo.getVideos(req.query.uid).then(data => {
     res.send(data)
+  }).catch(err => {
+      console.log(err)
   })
 });
 
