@@ -56,6 +56,7 @@ class MyVideoPage extends React.Component {
         super(props);
         this.state = {
             videos: [],
+            isLoading: true
         };
     }
     componentDidMount() {
@@ -63,7 +64,6 @@ class MyVideoPage extends React.Component {
         getUID().then(user => {
             fetch(util.format('%s/videos?uid=%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid), {
                 method: "GET",
-                mode: 'no-cors',
                 headers: {
                     "Accept": "application/json",
                     'Content-Type': 'application/json'
@@ -73,10 +73,7 @@ class MyVideoPage extends React.Component {
                 return response.json() // 401 = Unauthorized; 200 = OK
               })
               .then(responseData => {
-                return JSON.stringify(responseData)
-              })
-              .then(jsonStr => {
-                that.state.setState({videos: jsonStr})
+                that.setState({videos: responseData, isLoading: false})
                 console.log(this.state.videos)
               })
         })
@@ -96,7 +93,7 @@ class MyVideoPage extends React.Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {this.state.videos.length > 0 ? this.state.videos.map(video => (
+                        {!this.state.isLoading ? this.state.videos.map(video => (
                             <StyledTableRow key={video.videoTitle}>
                                 <StyledTableCell component="th" scope="row">
                                     {<a href={video.url}>{video.videoTitle}</a>}
