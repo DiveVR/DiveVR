@@ -62,6 +62,7 @@ class MyVideoPage extends React.Component {
         getUID().then(user => {
             fetch(util.format('%s/videos?uid=%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid), {
                 method: "GET",
+                mode: 'no-cors',
                 headers: {
                     "Accept": "application/json",
                     'Content-Type': 'application/json'
