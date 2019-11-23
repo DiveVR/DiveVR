@@ -59,6 +59,7 @@ class MyVideoPage extends React.Component {
         };
     }
     componentDidMount() {
+        const that = this
         getUID().then(user => {
             fetch(util.format('%s/videos?uid=%s', process.env.REACT_APP_EXPRESS_BACKEND, user.uid), {
                 method: "GET",
@@ -72,9 +73,11 @@ class MyVideoPage extends React.Component {
                 return response.json() // 401 = Unauthorized; 200 = OK
               })
               .then(responseData => {
-                this.setState({videos: responseData})
+                return JSON.stringify(responseData)
+              })
+              .then(jsonStr => {
+                that.state.setState({videos: jsonStr})
                 console.log(this.state.videos)
-                return responseData
               })
         })
     }
